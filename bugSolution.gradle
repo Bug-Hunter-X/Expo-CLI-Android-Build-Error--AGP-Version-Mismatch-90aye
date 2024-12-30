@@ -1,0 +1,13 @@
+The solution lies in updating the Gradle wrapper and potentially the AGP version in your `android/gradle/wrapper/gradle-wrapper.properties` file.  This file specifies which version of Gradle is used to build your project.  A mismatched or outdated Gradle version can indirectly lead to AGP version problems.  
+
+1. **Check Expo Documentation:**  Refer to the official Expo documentation for the recommended or supported AGP version for your Expo SDK version.  
+2. **Update `gradle-wrapper.properties`:** Change the `distributionUrl` in your `android/gradle/wrapper/gradle-wrapper.properties` file to match the correct Gradle version compatible with the required AGP version. For example:
+```gradle
+distributionUrl=https\://services.gradle.org/distributions/gradle-8.0-all.zip
+```
+3. **Clean and Rebuild:** After changing the `gradle-wrapper.properties` file, perform a clean build to ensure the changes take effect.  In your terminal, navigate to your project's `android` directory and run:
+```bash
+./gradlew clean
+./gradlew assembleDebug
+```
+4. **(If Necessary) Explicitly Set AGP Version:** In rare cases, you might need to explicitly specify the AGP version in your module-level `build.gradle` file (usually located in `android/app/build.gradle`).  However, updating the Gradle wrapper is usually sufficient.
