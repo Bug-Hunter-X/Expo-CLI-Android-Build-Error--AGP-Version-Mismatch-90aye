@@ -1,0 +1,6 @@
+This error occurs when using the Expo CLI to build an Android app and involves a mismatch between the Android Gradle Plugin (AGP) version specified in your project's `android/gradle/wrapper/gradle-wrapper.properties` file and the version required by Expo.  The error message might not explicitly mention AGP, but instead point to a failure during the build process related to dependencies or configuration issues within the Android build system.  This can be particularly tricky to debug as the root cause is an indirect dependency conflict.
+
+For Example, you might see errors like: 
+* `Could not resolve all dependencies for configuration ':app:debugImplementation'`
+* A series of errors related to `com.android.tools.build:gradle`
+* Errors indicating missing classes or methods related to Android SDK components
